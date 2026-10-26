@@ -4,7 +4,7 @@
 
 The architecture and core logic of a complete HubSpot revenue operations system I built and run for a medical device + consumables company. It covers lifecycle, routing, approvals, service, data quality and reporting, from first form fill to churn.
 
-> **About this repo.** The real portal has **700+ workflows (400+ active)** across contacts, companies, deals, tickets and quotes. I can't publish the portal, so this repo does two things: it documents how the system is designed, and it rebuilds the four most important engines as tested Python with **synthetic data**. Rep names, approvers, pricing thresholds and customer data are all replaced.
+> **About this repo.** The real portal runs hundreds of workflows across contacts, companies, deals, tickets and quotes. I can't publish the portal, so this repo does two things: it documents how the system is designed, and it rebuilds the four most important engines as tested Python with **synthetic data**. Rep names, approvers, pricing thresholds and customer data are all replaced.
 
 ## The system at a glance
 
@@ -42,7 +42,7 @@ flowchart LR
 
 | Module | Production workflow it mirrors | What it shows |
 |---|---|---|
-| [`revops/lifecycle.py`](revops/lifecycle.py) | Lifecycle stage + lead status engine (the portal's busiest workflow, **370K+ enrollments**) | Priority-ordered rules, forward-only stages, churn rule, internal/consumer exclusion, "notify, don't guess" |
+| [`revops/lifecycle.py`](revops/lifecycle.py) | Lifecycle stage + lead status engine (the portal's busiest workflow) | Priority-ordered rules, forward-only stages, churn rule, internal/consumer exclusion, "notify, don't guess" |
 | [`revops/assignment.py`](revops/assignment.py) | Contact, company and deal assignment for new business and for customers | ZIP-first then state fallback, outside vs inside eligibility, manual-handoff lock, corporate east/west, re-engagement owner |
 | [`revops/approvals.py`](revops/approvals.py) | Four-workflow discounted price approval chain | A state machine across workflows; bundled consumables count toward price; idempotent steps |
 | [`revops/service.py`](revops/service.py) | Ticket status, ship gate and stage reminders | Required fields before shipping, 2-day / 7-day nudges, demo auto-assignment |
@@ -76,13 +76,10 @@ pip install pytest
 python -m pytest -q     # 18 tests
 ```
 
-## Scale (production portal)
+## Scope (production portal)
 
 | | |
 |---|---|
-| Workflows built | 700+ (400+ active) |
 | Objects automated | Contacts, companies, deals, tickets, quotes |
-| Lifecycle engine enrollments | 370K+ |
-| Contact routing paths | ~30 (ZIP and state, outside and inside) |
+| Routing | ZIP- and state-based, outside and inside sales |
 | Integrations | E-commerce, ERP, Google Sheets leaderboards, lead ads, CRM migration to Salesforce |
-
