@@ -1,6 +1,6 @@
 # HubSpot RevOps System
 
-[![CI](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml/badge.svg)](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![CI](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml/badge.svg)](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml)
 
 The architecture and core logic of a complete HubSpot revenue operations system I built and run for a medical device + consumables company. It covers lifecycle, routing, approvals, service, data quality and reporting, from first form fill to churn.
 
@@ -63,6 +63,12 @@ Related repos built from the same portal:
 6. **Notify, don't guess.** When no rule matches, the owner gets a task instead of a silent default.
 7. **Logic in code where it's hard.** Address cleanup and Provider Map eligibility run as custom code with dry-run modes. Simple branching stays in the visual editor.
 
+## Limitations
+
+- These are the decision rules, not the workflows themselves. HubSpot workflows can't be exported as code, so the visual-editor wiring, enrollment triggers and re-enrollment settings live only in the portal.
+- Routing tables here are tiny. The real ones change every time a rep is hired or leaves, and keeping them current is a process problem as much as a technical one.
+- Lifecycle "never moves backward" holds for automation. Admins can still reset a stage by hand, and that path is not modeled.
+
 ## Run it
 
 ```bash
@@ -80,5 +86,3 @@ python -m pytest -q     # 18 tests
 | Contact routing paths | ~30 (ZIP and state, outside and inside) |
 | Integrations | E-commerce, ERP, Google Sheets leaderboards, lead ads, CRM migration to Salesforce |
 
----
-Built by [Vrutik Adani](https://www.linkedin.com/in/vrutikadani) · Technical Product Manager, GTM Systems & AI Engineering
