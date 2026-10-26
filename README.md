@@ -1,5 +1,7 @@
 # HubSpot RevOps System
 
+[![CI](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml/badge.svg)](https://github.com/vrutikadani/hubspot-revops-system/actions/workflows/ci.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+
 The architecture and core logic of a complete HubSpot revenue operations system I built and run for a medical device + consumables company. It covers lifecycle, routing, approvals, service, data quality and reporting, from first form fill to churn.
 
 > **About this repo.** The real portal has **700+ workflows (400+ active)** across contacts, companies, deals, tickets and quotes. I can't publish the portal, so this repo does two things: it documents how the system is designed, and it rebuilds the four most important engines as tested Python with **synthetic data**. Rep names, approvers, pricing thresholds and customer data are all replaced.
@@ -79,4 +81,4 @@ python -m pytest -q     # 18 tests
 | Integrations | E-commerce, ERP, Google Sheets leaderboards, lead ads, CRM migration to Salesforce |
 
 ---
-Built by [Vrutik Adani](https://www.linkedin.com/in/vrutikadani) · GTM Systems & AI Engineering
+Built by [Vrutik Adani](https://www.linkedin.com/in/vrutikadani) · Technical Product Manager, GTM Systems & AI Engineering
