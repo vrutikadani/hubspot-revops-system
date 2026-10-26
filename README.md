@@ -47,9 +47,9 @@ flowchart LR
 
 Related repos built from the same portal:
 
-- [hubspot-zip-data-quality](https://github.com/adanivs27/hubspot-zip-data-quality): the custom-code address fixer
-- [crm-automation-toolkit](https://github.com/adanivs27/crm-automation-toolkit): Provider Map workflow and AR triage agent
-- [territory-optimizer](https://github.com/adanivs27/territory-optimizer): territory design behind the routing tables
+- [hubspot-zip-data-quality](https://github.com/vrutikadani/hubspot-zip-data-quality): the custom-code address fixer
+- [crm-automation-toolkit](https://github.com/vrutikadani/crm-automation-toolkit): Provider Map workflow and AR triage agent
+- [territory-optimizer](https://github.com/vrutikadani/territory-optimizer): territory design behind the routing tables
 
 ## Design principles
 
